@@ -4,7 +4,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView, DetailView, View
+from django.views.generic import ListView, DetailView, View, TemplateView
 from django.shortcuts import redirect
 from django.utils import timezone
 from .forms import CheckoutForm, CouponForm, RefundForm, PaymentForm
@@ -514,3 +514,21 @@ class RequestRefundView(View):
             except ObjectDoesNotExist:
                 messages.info(self.request, "This order does not exist.")
                 return redirect("core:request-refund")
+
+class AboutView(TemplateView):
+    template_name = "about.html"
+
+class ServicesView(TemplateView):
+    template_name = "services.html"
+
+class ShopView(TemplateView):
+    template_name = "shop.html"
+
+class ContactView(TemplateView):
+    template_name = "contact.html"
+
+class ProductsView(TemplateView):
+    template_name = "products.html"
+
+class RecycleView(TemplateView):
+    template_name = "recycle.html"
