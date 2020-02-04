@@ -1,9 +1,31 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 
-RECYCLE TEST
+<div class="container">
 
+    <h2 class="my-5 h2 text-center">Recycle</h2>
+    <div class="row">
+                <div class="col-md-6 mb-4" style="text-align:center">
+                        <img style="width: 15rem" src="{% static 'img/recycle-symbol.jpg' %}" alt="recycle">
+                </div>
+                <div class="col-md-6 mb-4">
+              <p>
+                      An old or broken computer still has great usability...
+                    </p>
+                    <p>  
+                      If you have or know somebody who has, please contact us.
+                    </p>
+
+                    <p>
+                      We will still accept your old unusable computer & Recycle correctly & responsibly.
+                    </p>
+                    <p>
+                      Serviceable parts will be reconditioned & re-used in clients repairs at a considerable saving to supplying new parts, making a non viable repair affordable.
+                    </p>
+                </div>
+    </div>
+</div>
 {% endblock content %}
 
 

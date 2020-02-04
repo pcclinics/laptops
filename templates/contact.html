@@ -1,9 +1,308 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 
-CONTACT TEST
+<style>
 
+
+/* section intro */
+
+.contact-email{
+    margin-bottom: 50px;
+  text-align:center;
+}
+.address-details{
+  margin-bottom: 4px;
+      font-size: 14px;
+
+}
+.map-iframe{
+  margin-bottom: 40px;
+}
+
+
+/* ============== contact ==================== */
+ul.contact-list{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+ul.contact-list li{
+	list-style:none;
+	margin:0 0 20px 0;
+	padding:0;
+}
+
+ul.contact-list li input.form_input,ul.contact-list li textarea.form_textarea {
+	width: 100%;
+	padding:10px 5px;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+ border:1px solid #cccccc;
+}
+ul.contact-list li input.form_input:hover,ul.contact-list li textarea.form_textarea:hover {
+
+ border:1px solid #ff9800;
+}
+
+ul.contact-list li.last{
+	margin-bottom:0;
+}
+
+ul.contact-list li label{
+	font-size:14px;
+	margin-bottom:10px;
+}
+
+.validation {
+  color: red;
+  display:none;
+  margin: 0;
+  font-weight:400;
+  font-size:13px;
+}
+
+#sendmessage {
+  color: green;
+  border:1px solid green;
+  display:none;
+  text-align:center;
+  padding:15px;
+  font-weight:600;
+  margin-bottom:15px;
+}
+
+#errormessage {
+  color: red;
+  display:none;
+  border:1px solid red;
+  text-align:center;
+  padding:15px;
+  font-weight:600;
+  margin-bottom:15px;
+}
+
+#sendmessage.show, #errormessage.show, .show {
+	display:block;
+}
+
+</style>
+
+    <div class="container">
+    <h2 class="my-5 h2 text-center">Get in touch with us</h2>
+      <div class="row">
+
+        <div class="col-md-12">
+    
+            <h5 style="text-align:center;">
+                Feel free to ask if you have any question regarding our services we would love to hear from you.
+            </h5>
+
+
+          <p class="contact-email">
+              <i class="fas fa-envelope"></i><strong> Email:</strong> repairs@thepcclinics.com
+            </p>
+        </div>
+      </div>
+
+      
+        <div class="row">
+
+          <div class="col-md-6">
+
+              <p class="address-details">
+                <span><i class="fas fa-phone"></i> <strong>Phone:</strong>(01) 8749547</span>
+              </p>
+              <p class="address-details"> 
+                <span><i class="fas fa-home"></i> <strong>Address: </strong>Ilac Shopping Centre - Dublin 1</span>
+              </p>
+    
+              <div>
+                <iframe class="map-iframe" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9526.407080300112!2d-6.2692961!3d53.3503845!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x71240c6f2a585e4e!2sThe+PC+Clinics!5e0!3m2!1sen!2sie!4v1564594162514!5m2!1sen!2sie" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+              </div>
+          </div>
+          <div class="col-md-6">
+
+              <p class="address-details">
+                <span><i class="fas fa-phone"></i> <strong>Phone:</strong> (01) 8084884</span>
+              </p>
+              <p class="address-details">
+                <span><i class="fas fa-home"></i> <strong>Address: </strong>Pavilions Shopping Centre - Swords</span>
+              </p>
+
+              <div>
+                <iframe class="map-iframe" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9503.151518469422!2d-6.219034!3d53.454378!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa060ef6ad0e79c8b!2sThe+PC+Clinics!5e0!3m2!1sen!2sie!4v1564780881134!5m2!1sen!2sie" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+              </div>
+          </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h4><i class="fas fa-envelope"></i> Contact form</h4>
+      
+                <!-- start contact form -->
+                <div id="sendmessage">Your message has been sent. Thank you!</div>
+                <div id="errormessage"></div>
+
+                <form action="https://formspree.io/marcio@thepcclinics.com" method="POST"> <!--class="contactForm"-->
+                  <div id="sendmessage">Your message has been sent. Thank you!</div>
+                  <div id="errormessage"></div>
+      
+                  <ul class="contact-list">
+                    <li class="form-group">
+                      <input type="text" name="name" class="form_input" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                      <div class="validation"></div>
+                      <li class="form-group">
+                        <input type="email" class="form_input" name="_replyto" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
+                        <div class="validation"></div>
+                      </li>
+                      <li class="form-group">
+                        <input type="text" class="form_input" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
+                        <div class="validation"></div>
+                      </li>
+      
+                      <li class="form-group">
+                        <textarea class="form_textarea" name="message" rows="2" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                        <div class="validation"></div>
+                      </li>
+                      <li class="last">
+                        <button class="btn btn-large btn-theme" type="submit" id="send">
+                        <i class="fas fa-paper-plane"></i>
+                          Send a message
+                        </button>
+                      </li>
+                  </ul>
+                </form>
+                <!-- end contact form -->
+      
+              </div>
+        </div>
+
+    </div>
+
+
+<script>
+jQuery(document).ready(function($) {
+  "use strict";
+
+  //Contact
+  $('form.contactForm').submit(function() {
+    var f = $(this).find('.form-group'),
+      ferror = false,
+      emailExp = /^[^\s()<>@,;:\/]+@\w[\w\.-]+\.[a-z]{2,}$/i;
+
+    f.children('input').each(function() { // run all inputs
+
+      var i = $(this); // current input
+      var rule = i.attr('data-rule');
+
+      if (rule !== undefined) {
+        var ierror = false; // error flag for current input
+        var pos = rule.indexOf(':', 0);
+        if (pos >= 0) {
+          var exp = rule.substr(pos + 1, rule.length);
+          rule = rule.substr(0, pos);
+        } else {
+          rule = rule.substr(pos + 1, rule.length);
+        }
+
+        switch (rule) {
+          case 'required':
+            if (i.val() === '') {
+              ferror = ierror = true;
+            }
+            break;
+
+          case 'minlen':
+            if (i.val().length < parseInt(exp)) {
+              ferror = ierror = true;
+            }
+            break;
+
+          case 'email':
+            if (!emailExp.test(i.val())) {
+              ferror = ierror = true;
+            }
+            break;
+
+          case 'checked':
+            if (! i.is(':checked')) {
+              ferror = ierror = true;
+            }
+            break;
+
+          case 'regexp':
+            exp = new RegExp(exp);
+            if (!exp.test(i.val())) {
+              ferror = ierror = true;
+            }
+            break;
+        }
+        i.next('.validation').html((ierror ? (i.attr('data-msg') !== undefined ? i.attr('data-msg') : 'wrong Input') : '')).show('blind');
+      }
+    });
+    f.children('textarea').each(function() { // run all inputs
+
+      var i = $(this); // current input
+      var rule = i.attr('data-rule');
+
+      if (rule !== undefined) {
+        var ierror = false; // error flag for current input
+        var pos = rule.indexOf(':', 0);
+        if (pos >= 0) {
+          var exp = rule.substr(pos + 1, rule.length);
+          rule = rule.substr(0, pos);
+        } else {
+          rule = rule.substr(pos + 1, rule.length);
+        }
+
+        switch (rule) {
+          case 'required':
+            if (i.val() === '') {
+              ferror = ierror = true;
+            }
+            break;
+
+          case 'minlen':
+            if (i.val().length < parseInt(exp)) {
+              ferror = ierror = true;
+            }
+            break;
+        }
+        i.next('.validation').html((ierror ? (i.attr('data-msg') != undefined ? i.attr('data-msg') : 'wrong Input') : '')).show('blind');
+      }
+    });
+    if (ferror) return false;
+    else var str = $(this).serialize();
+    var action = $(this).attr('action');
+    if( ! action ) {
+      action = 'contactform/contactform.php';
+    }
+    $.ajax({
+      type: "POST",
+      url: action,
+      data: str,
+      success: function(msg) {
+        // alert(msg);
+        if (msg == 'OK') {
+          $("#sendmessage").addClass("show");
+          $("#errormessage").removeClass("show");
+          $('.contactForm').find("input, textarea").val("");
+        } else {
+          $("#sendmessage").removeClass("show");
+          $("#errormessage").addClass("show");
+          $('#errormessage').html(msg);
+        }
+
+      }
+    });
+    return false;
+  });
+
+});
+</script>
 {% endblock content %}
 
 

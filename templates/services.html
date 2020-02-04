@@ -1,8 +1,183 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 
-SERVICES TEST
+<style>
+/* Align center */
+.aligncenter{
+	margin:0 auto;
+	text-align:center;
+}
+
+.aligncenter i {
+	text-align:center;
+}
+
+.aligncenter img, img.aligncenter{
+	margin-bottom:20px;
+}
+
+/*cards services*/
+@media (min-width: 980px) {
+  .well.box.aligncenter {
+    margin-top: 20px;
+    min-height: 500px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .well.box.aligncenter {
+    margin-top: 20px;
+    min-height: 650px !important;
+  }
+}
+
+@media (max-width:767px){
+  .well.box.aligncenter {
+    min-height: 170px !important;
+  }
+}
+.well {
+ /*min-height: 20px;*/
+  min-height: 315px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.box  { 
+  padding: 18px; 
+  margin-bottom: 18px; 
+  background: #eee; 
+}
+
+.icon-circled {
+    margin: 10px 10px 10px 0;
+    display: inline-block !important;
+    text-align: center !important;
+    color: #fff;
+    width: 18px;
+    height: 18px;
+	padding:3px;
+    font-size: 12px;
+    line-height: 18px;
+    text-shadow:none;
+    cursor: pointer;
+
+    background-color: #444;
+
+
+        border-radius: 24px;
+    -moz-border-radius: 24px;
+    -webkit-border-radius: 24px;
+}
+.icon-circled:hover {
+    background-color: #ef6603;
+}
+[class^="icon-"].active,
+[class*=" icon-"].active {
+    background-color: #ef6603;
+}
+
+
+.icon-48 {
+    width: 42px;
+    height: 42px;
+    padding: 3px;
+    font-size: 44px;
+    line-height: 40px;
+}
+</style>
+
+    <div class="container">
+
+
+        <h2 class="my-5 h2 text-center">Services</h2>
+
+
+      <div class="row">
+        <div class="col-md-3">
+          <div class="well box aligncenter">
+           <!-- <i class="icon-circled active icon-48 icon-group"></i>-->
+            <img src="{% static 'img/services-icons/save-money.svg' %}" class="icon-circled icon-48">
+            <h3>No fix no fee</h3>
+            <p>
+             We diagnose the problem quickly & accurately at no cost, issue a report with a fixed price for the reapir if you would like us to take the pain away.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="well box aligncenter">
+              <img src="{% static 'img/services-icons/support.svg' %}" class="icon-circled icon-48">
+            <h3>Upgrades... hardware & software</h3>
+            <p>
+              Memory Ram, HardDrives, Graphics/Sound, Wireless etc.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="well box aligncenter">
+            <img src="{% static 'img/services-icons/toxic-sign.svg' %}" class="icon-circled icon-48">
+            <h3>Virus removal... virus, spyware, malware, adware</h3>
+            <p>
+              Remove, TuneUp, install internet security software, configure, update & optimise.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="well box aligncenter">
+            <img src="{% static 'img/services-icons/tools.svg' %}" class="icon-circled icon-48">
+            <h3>Repairs... hardware & software</h3>
+            <p>
+              LCD screens, HDD(hard drive), MotherBoard, Power sockets, Power Adapters etc, Operating System errors, WiFi configuration & more.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+            <div class="well box aligncenter">
+                <img src="{% static 'img/services-icons/stethoscope.svg' %}" class="icon-circled icon-48">
+                <h3>Health check... diagnose & optimise</h3>
+              <p>
+                Using state of the art diagnostic tools find, repair system issues, TuneUp & Optimise your Computer.
+              </p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="well box aligncenter">
+                <img src="{% static 'img/services-icons/database.svg' %}" class="icon-circled icon-48">
+                <h3>Data recovery... hard drive issues, new computer transfer</h3>
+              <p>
+                Recover & transfer your data to external media (back-up) or if you would like your new computer to have your old data installed & optimised.
+              </p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="well box aligncenter">
+                <img src="{% static 'img/services-icons/padlock.svg' %}" class="icon-circled icon-48">
+                <h3>Total Security & Confidentiality</h3>
+              <p>
+                Your Data is safe with us,
+                in compliance with CDPR.
+              </p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="well box aligncenter">
+                <img src="{% static 'img/services-icons/round-add-button.svg' %}" class="icon-circled icon-48">
+                <h3>More...</h3>
+              <p>
+               Call us for a consultation, we are pleased to help.
+              </p>
+            </div>
+        </div>
+      </div>
+    </div>
 
 {% endblock content %}
 
