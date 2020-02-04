@@ -43,21 +43,23 @@
             <a href="/" class="nav-link waves-effect">
               <span class="clearfix d-none d-sm-inline-block">Shop</span>
             </a>
-            <a href="{% url 'core:recycle' %}" class="nav-link waves-effect">
-              <span class="clearfix d-none d-sm-inline-block"> Recycle</span>
+            <a href="{% url 'core:about' %}" class="nav-link waves-effect">
+              <span class="clearfix d-none d-sm-inline-block"> About</span>
             </a>
             <a href="{% url 'core:products' %}" class="nav-link waves-effect">
               <span class="clearfix d-none d-sm-inline-block"> Products</span>
             </a>
-            <a href="{% url 'core:contact' %}" class="nav-link waves-effect">
-              <span class="clearfix d-none d-sm-inline-block"> Contact</span>
-            </a>
             <a href="{% url 'core:services' %}" class="nav-link waves-effect">
               <span class="clearfix d-none d-sm-inline-block"> Services</span>
             </a>
-            <a href="{% url 'core:about' %}" class="nav-link waves-effect">
-              <span class="clearfix d-none d-sm-inline-block"> About</span>
+            <a href="{% url 'core:recycle' %}" class="nav-link waves-effect">
+              <span class="clearfix d-none d-sm-inline-block"> Recycle</span>
             </a>
+            <a href="{% url 'core:contact' %}" class="nav-link waves-effect">
+              <span class="clearfix d-none d-sm-inline-block"> Contact</span>
+            </a>
+
+
           </li>
           {% if request.user.is_authenticated %}
           <li class="nav-item">

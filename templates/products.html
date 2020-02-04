@@ -1,8 +1,119 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
+<style>
+.product-card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  /*width: 33%;*/
+  min-height: 550px;
+  display: inline-block;
+  margin-top: 15px;
+}
+.product-card img{
+  max-height: 300px;
+  width: auto;
 
-PRODUCTS TEST
+}
+.product-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+ .product-card-container {
+  padding: 2px 16px;
+} 
+</style>
+
+
+      <div class="container">
+
+        <h2 class="my-5 h2 text-center">Products</h2>
+              <div class="row">
+                  <div class="col-md-4">
+                        <div class="product-card card">
+                            <img src="{% static 'img/BuffaloPortable-Hard-Drive.jpg' %}" alt="hard-drive" style="width:100%">
+                            <div class="product-card-container">
+                                <h4><b>External Hard Drives</b></h4> 
+                                <p>conveniently portable, easy to use
+                                ‘Plug & Play’ on Windows, Mac & Linux. Never lose your Data 
+                                perfect storage solution for your Music, Pictures & Videos.</p> 
+                            </div>
+                        </div>
+                  </div>
+      
+
+                <div class="col-md-4">
+                    <div class="product-card card">
+                        <img src="{% static 'img/internetSecurity.jpg' %}" alt="anti-virus" style="width:100%">
+                        <div class="product-card-container">
+                            <h4><b>Internet Security</b></h4> 
+                            <p>to enjoy the Web safely, every 
+                            Windows machine should have this utility up to date & running 
+                            efficiently, protecting your personal security & giving you Peace of Mind</p> 
+                        </div>
+                    </div>
+           
+                </div>
+
+                <div class="col-md-4">
+                    <div class="product-card card">
+                        <img src="{% static 'img/mice_keyboard.jpg' %}" alt="keyboards" style="width:100%">
+                        <div class="product-card-container">
+                            <h4><b>Mice & Keyboards</b></h4> 
+                            <p>Increase the usability of your Laptop, or 
+                                Upgrade your ageing Desktop with the latest technology or just 
+                                add a splash of colour.</p> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                  <div class="col-md-4">
+                        <div class="product-card card">
+                            <img src="{% static 'img/softwareUpgrades.jpg' %}" alt="software" style="width:100%">
+                            <div class="product-card-container">
+                            <h4><b>Microsoft software</b></h4> 
+                            <p>If you require the worlds favourite; Microsoft Office application suite or require an Operating System upgrade, 
+                                we are pleased to offer a broad selection & for a small fee 
+                                install, configure & update.</p> 
+                            </div>
+                        </div>
+                  </div>
+      
+
+                <div class="col-md-4">
+                    <div class="product-card card">
+                        <img src="{% static 'img/computer-cables.jpg' %}" alt="cables" style="width:100%">
+                        <div class="product-card-container">
+                            <h4><b>Cables</b></h4> 
+                            <p>Whether you want to connect your printer, camera, 
+                                TV etc, we can supply the right cables & adapters for the perfect 
+                                connectivity.</p> 
+                        </div>
+                    </div>
+           
+                </div>
+
+                <div class="col-md-4">
+                    <div class="product-card card">
+                        <img src="{% static 'img/clearviewwipes_screenCleaner.jpg' %}" alt="wipes" style="width:100%">
+                        <div class="product-card-container">
+                            <h4><b>Cleaning Products</b></h4> 
+                            <p>Often taken for granted, the correct cleaning product is a must to maintain the efficiency & condition of your 
+                                equipment. Available to clean, screens, keyboards & 
+                                internal parts. Anti-Bacteria wipes to stop the spread of infections on multi-user machines.</p> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          
+
+      </div>
+
+
+
 
 {% endblock content %}
 

@@ -1,9 +1,25 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 
-ABOUT TEST
+<div class="container">
 
+    <h2 class="my-5 h2 text-center">About our company</h2>
+    <div class="row">
+                <div class="col-md-6 mb-4">
+                        <img src="{% static 'img/about.jpg' %}" alt="about">
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h3>who we are</h3>
+                    <p>
+                        Nothing is more frustrating than something not working when you need it most. Doesn't it seem like your computer always needs repair at the worst times? Perhaps your final paper is due for a class or you simply can't do the work you need to - whatever the case, getting your PC repaired is essential.
+                    </p>
+                    <p>  
+                        Many technicians in the computer industry charge a flat rate (or several hours of time) to perform a "tune up" on your PC and will tell you that they've repaired it. This is seldom the best way to approach your problem and will not prevent the problem from coming again. The reality is that spyware removal, disk drive defragmentation, virus removal and definition updates, etc. are only temporary solutions if not coupled with completely securing your computer.
+                    </p>
+                </div>
+    </div>
+</div>
 {% endblock content %}
 
 
