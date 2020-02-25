@@ -171,7 +171,7 @@ button:hover {
 {% block extra_scripts %}
 
 <script nonce="">  // Create a Stripe client.
-  var stripe = Stripe('');
+  var stripe = Stripe('pk_test_DxnuyhiEsy2ydFJDnX8hurr900AGbfQIKT');
 
   // Create an instance of Elements.
   var elements = stripe.elements();
@@ -195,8 +195,10 @@ button:hover {
   };
 
   // Create an instance of the card Element.
-  var card = elements.create('card', {style: style});
-
+  var card = elements.create('card', {
+  hidePostalCode: true,
+  style: style
+  });
   // Add an instance of the card Element into the `card-element` <div>.
   card.mount('#card-element');
 

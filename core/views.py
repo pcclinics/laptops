@@ -238,11 +238,14 @@ class PaymentView(View):
         form = PaymentForm(self.request.POST)
         userprofile = UserProfile.objects.get(user=self.request.user)
         if form.is_valid():
+            print('.....form is valid')
             token = form.cleaned_data.get('stripeToken')
             save = form.cleaned_data.get('save')
             use_default = form.cleaned_data.get('use_default')
 
             if save:
+                print('.....save')
+
                 if userprofile.stripe_customer_id != '' and userprofile.stripe_customer_id is not None:
                     customer = stripe.Customer.retrieve(
                         userprofile.stripe_customer_id)
@@ -299,12 +302,14 @@ class PaymentView(View):
                 return redirect("/")
 
             except stripe.error.CardError as e:
+                print(e)
                 body = e.json_body
                 err = body.get('error', {})
                 messages.warning(self.request, f"{err.get('message')}")
                 return redirect("/")
 
             except stripe.error.RateLimitError as e:
+                print(e)
                 # Too many requests made to the API too quickly
                 messages.warning(self.request, "Rate limit error")
                 return redirect("/")
@@ -316,17 +321,20 @@ class PaymentView(View):
                 return redirect("/")
 
             except stripe.error.AuthenticationError as e:
+                print(e)
                 # Authentication with Stripe's API failed
                 # (maybe you changed API keys recently)
                 messages.warning(self.request, "Not authenticated")
                 return redirect("/")
 
             except stripe.error.APIConnectionError as e:
+                print(e)
                 # Network communication with Stripe failed
                 messages.warning(self.request, "Network error")
                 return redirect("/")
 
             except stripe.error.StripeError as e:
+                print(e)
                 # Display a very generic error to the user, and maybe send
                 # yourself an email
                 messages.warning(
@@ -334,6 +342,7 @@ class PaymentView(View):
                 return redirect("/")
 
             except Exception as e:
+                print(e)
                 # send an email to ourselves
                 messages.warning(
                     self.request, "A serious error occurred. We have been notifed.")
